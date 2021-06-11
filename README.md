@@ -1,3 +1,3 @@
 # Music-Separator
-使用telegram bot幫你分離你音樂中的各種樂器
+使用telegram bot幫你分離你音樂中的各種樂器<\n>
 <img src="photo1.jpg" style="zoom:30%">
