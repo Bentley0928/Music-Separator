@@ -60,11 +60,11 @@ def sendAudio(update, context):
             options = {
                 'format': 'bestaudio/best',
                 'outtmpl': 'down' +'.mp3',
-                """'postprocessors': [{
+                'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
                     'preferredquality': '320'
-                }]"""
+                }]
             }
             with youtube_dl.YoutubeDL(options) as ydl:
                 ydl.download([link])
@@ -73,7 +73,7 @@ def sendAudio(update, context):
             #title = vid['title']
             #print (title)
             os.system('mv -f down.mp3 aim.mp3')
-            bot.sendMessage(chat_id=chat_id,text='輸入你想要區分的方法\n*請輸入數字(2 or 4 or 5, 輸入exit來取消)\n[2:(vocals / accompaniment)]\n[4:(vocals / bass / drums / other )]\n[5:(vocals / bass / drums / piano / other)]\n')
+            bot.sendMessage(chat_id=chat_id,text='輸入你想要區分的方法\n*請輸入數字(2 or 4 or 5, 輸入exit來取消)\n[2:(vocals / accompaniment)]\n[4:(vocals / bass / drums / other )]\n[5:(vocals / bass / drums / piano / other)]\n可能需要一段時間，請稍候')
 
             print (link)
             flag11 = 1
