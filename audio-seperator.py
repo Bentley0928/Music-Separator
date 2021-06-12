@@ -47,6 +47,7 @@ def sendAudio(update, context):
         chat_id = update.message.chat.id
         command = update.message.text
         if command.startswith('yt'):
+            bot.sendMessage(chat_id=chat_id,text='下載中，請稍候...')
             param = command[3:]
             response = urlopen("https://www.youtube.com/results?search_query="+param)
             data = response.read()
@@ -59,11 +60,11 @@ def sendAudio(update, context):
             options = {
                 'format': 'bestaudio/best',
                 'outtmpl': 'down' +'.mp3',
-                'postprocessors': [{
+                """'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
                     'preferredquality': '320'
-                }]
+                }]"""
             }
             with youtube_dl.YoutubeDL(options) as ydl:
                 ydl.download([link])
