@@ -58,7 +58,7 @@ def sendAudio(update, context):
             link = param
             options = {
                 'format': 'bestaudio/best',
-                'outtmpl': 'aim' +'.mp3',
+                'outtmpl': 'down' +'.mp3',
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
@@ -71,6 +71,7 @@ def sendAudio(update, context):
             #watchid = watchid.replace('/watch?v=','')
             #title = vid['title']
             #print (title)
+            os.system('mv -f down.mp3 aim.mp3')
             bot.sendMessage(chat_id=chat_id,text='輸入你想要區分的方法\n*請輸入數字(2 or 4 or 5, 輸入exit來取消)\n[2:(vocals / accompaniment)]\n[4:(vocals / bass / drums / other )]\n[5:(vocals / bass / drums / piano / other)]\n')
 
             print (link)

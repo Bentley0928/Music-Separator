@@ -1,0 +1,1 @@
+pip3 install python-telegram-bot spleeter youtube-dl
