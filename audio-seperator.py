@@ -72,7 +72,7 @@ def sendAudio(update, context):
             #watchid = watchid.replace('/watch?v=','')
             #title = vid['title']
             #print (title)
-            os.system('mv -f down.mp3 aim.mp3')
+            os.rename("down.mp3", "aim.mp3")
             bot.sendMessage(chat_id=chat_id,text='輸入你想要區分的方法\n*請輸入數字(2 or 4 or 5, 輸入exit來取消)\n[2:(vocals / accompaniment)]\n[4:(vocals / bass / drums / other )]\n[5:(vocals / bass / drums / piano / other)]\n可能需要一段時間，請稍候')
 
             print (link)
@@ -83,7 +83,6 @@ def sendAudio(update, context):
         elif flag11 == 1:
                 print (command)
                 if command=='2':
-                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:2stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
@@ -95,7 +94,6 @@ def sendAudio(update, context):
                     os.remove('aim.mp3')
                     flag11=0
                 elif command=='4':
-                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:4stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
@@ -111,7 +109,6 @@ def sendAudio(update, context):
                     os.remove('aim.mp3')
                     flag11=0
                 elif command=='5':
-                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:5stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
