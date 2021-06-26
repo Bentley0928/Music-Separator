@@ -83,6 +83,7 @@ def sendAudio(update, context):
         elif flag11 == 1:
                 print (command)
                 if command=='2':
+                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:2stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
@@ -94,6 +95,7 @@ def sendAudio(update, context):
                     os.remove('aim.mp3')
                     flag11=0
                 elif command=='4':
+                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:4stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
@@ -109,6 +111,7 @@ def sendAudio(update, context):
                     os.remove('aim.mp3')
                     flag11=0
                 elif command=='5':
+                    bot.sendMessage(chat_id=chat_id,text='分析中，請稍候...')
                     separator = Separator('spleeter:5stems')
                     separator.separate_to_file('aim.mp3', 'audio_output')
                     os.system('ffmpeg -i audio_output/aim/vocals.wav -acodec mp3 audio_output/aim/vocals.mp3')
